@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:layout_height="wrap_content"
+    android:layout_margin="4dp"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:paddingBottom="10dp"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:id="@+id/relative_1"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:background="@drawable/edit_text_style"
+            android:drawableLeft="@drawable/ic_event_gray_24dp"
+            android:drawablePadding="8dp"
+            android:focusable="false"
+            android:hint="@string/set_due_date_hint"
+            android:id="@+id/add_todo_duedate_tv"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:padding="8dp"
+            android:textColor="#FF616161"
+            android:textSize="16sp" />
+
+        <ImageView
+            android:id="@+id/dismiss_dialog_button"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:minHeight="42dp"
+            android:minWidth="42dp"
+            android:paddingBottom="12dp"
+            android:paddingLeft="12dp"
+            android:src="@drawable/ic_exit" />
+    </RelativeLayout>
+
+    <EditText
+        android:background="@drawable/edit_text_style"
+        android:gravity="top"
+        android:hint="@string/add_to_do_hint"
+        android:id="@+id/add_todo_et"
+        android:inputType="textMultiLine|textCapSentences"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_width="match_parent"
+        android:minHeight="70dp"
+        android:paddingBottom="8dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp"
+        android:textColor="#FF616161"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/relative_1" />
+
+    <TextView
+        android:drawableLeft="@drawable/ic_info_red_14dp"
+        android:drawablePadding="2dp"
+        android:id="@+id/mandatory_field_tv"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="This field is mandatory"
+        android:textColor="#FFD50000"
+        android:textSize="12sp"
+        android:visibility="gone"
+        app:layout_constraintTop_toBottomOf="@id/add_todo_et" />
+
+    <EditText
+        android:background="@drawable/edit_text_style"
+        android:drawableLeft="@drawable/ic_border_color_gray_24dp"
+        android:drawablePadding="8dp"
+        android:hint="@string/additional_notes_hint"
+        android:id="@+id/add_todo_notes_et"
+        android:inputType="textMultiLine|textCapSentences"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:layout_width="match_parent"
+        android:minHeight="50dp"
+        android:paddingBottom="8dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="8dp"
+        android:paddingTop="8dp"
+        android:textColor="#FF616161"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/add_todo_et" />
+
+    <TextView
+        android:drawableLeft="@drawable/ic_keyboard_arrow_right_24dp"
+        android:drawablePadding="4dp"
+        android:id="@+id/add_voice_tv"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:paddingBottom="4dp"
+        android:paddingTop="10dp"
+        android:text="Add voice note"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/add_todo_notes_et" />
+
+    <net.cachapa.expandablelayout.ExpandableLayout
+        android:background="#ffffff"
+        android:id="@+id/expandableLayout"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        app:el_duration="800"
+        app:el_expanded="false"
+        app:el_parallax="0.5"
+        app:layout_constraintTop_toBottomOf="@id/add_voice_tv">
+
+        <RelativeLayout
+            android:id="@+id/record_layout"
+            android:layout_height="110dp"
+            android:layout_width="match_parent">
+
+            <Chronometer
+                android:id="@+id/record_chronometer"
+                android:layout_alignParentLeft="true"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="36dp"
+                android:layout_marginTop="34dp"
+                android:layout_width="wrap_content"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="18sp"
+                android:visibility="invisible" />
+
+            <ImageButton
+                android:background="@drawable/circle"
+                android:elevation="4dp"
+                android:id="@+id/add_todo_record_iv"
+                android:layout_centerHorizontal="true"
+                android:layout_height="46dp"
+                android:layout_marginBottom="4dp"
+                android:layout_marginTop="24dp"
+                android:layout_width="46dp"
+                android:src="@drawable/ic_mic_24dp" />
+
+            <TextView
+                android:id="@+id/hold_record_tv"
+                android:layout_below="@id/add_todo_record_iv"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:layout_width="wrap_content"
+                android:text="Hold to record"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="14sp" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/recorded_done_layout"
+            android:layout_height="110dp"
+            android:layout_width="match_parent"
+            android:paddingLeft="8dp"
+            android:paddingTop="8dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/voice_file_iv"
+                android:layout_alignParentLeft="true"
+                android:layout_height="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_width="24dp"
+                android:src="@drawable/ic_library_voice" />
+
+            <TextView
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="8dp"
+                android:layout_toRightOf="@id/voice_file_iv"
+                android:layout_width="wrap_content"
+                android:text="Voice note has been recorded!"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/duration_title_tv"
+                android:layout_below="@id/voice_file_iv"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="30dp"
+                android:layout_width="wrap_content"
+                android:text="Duration:"
+                android:textColor="@android:color/darker_gray" />
+
+            <TextView
+                android:id="@+id/voice_duration_tv"
+                android:layout_below="@id/voice_file_iv"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_toRightOf="@id/duration_title_tv"
+                android:layout_width="wrap_content"
+                android:text="00:05" />
+
+            <Button
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/ic_play_arrow_blue_24dp"
+                android:drawablePadding="2dp"
+                android:id="@+id/play_button"
+                android:layout_alignParentRight="true"
+                android:layout_below="@id/voice_file_iv"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="28dp"
+                android:layout_marginTop="24dp"
+                android:layout_width="wrap_content"
+                android:minHeight="42dp"
+                android:minWidth="0dp"
+                android:text="PLAY"
+                android:textColor="@color/colorPrimary" />
+
+            <Button
+                android:background="@android:color/transparent"
+                android:drawableLeft="@drawable/ic_reset_24dp"
+                android:drawablePadding="2dp"
+                android:id="@+id/reset_button"
+                android:layout_below="@id/voice_file_iv"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="52dp"
+                android:layout_marginTop="24dp"
+                android:layout_toLeftOf="@id/play_button"
+                android:layout_width="wrap_content"
+                android:minHeight="42dp"
+                android:minWidth="0dp"
+                android:text="RESET"
+                android:textColor="@color/colorPrimary" />
+
+        </RelativeLayout>
+
+
+    </net.cachapa.expandablelayout.ExpandableLayout>
+
+    <TextView
+        android:drawableLeft="@drawable/ic_keyboard_arrow_right_24dp"
+        android:drawablePadding="4dp"
+        android:id="@+id/add_reminder_tv"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:paddingBottom="4dp"
+        android:paddingTop="10dp"
+        android:text="@string/add_reminder_title"
+        android:textColor="@color/colorPrimary"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/expandableLayout" />
+
+    <net.cachapa.expandablelayout.ExpandableLayout
+        android:background="#ffffff"
+        android:id="@+id/expandable_reminder_layout"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        app:el_duration="800"
+        app:el_expanded="false"
+        app:el_parallax="0.5"
+        app:layout_constraintTop_toBottomOf="@id/add_reminder_tv">
+
+        <RelativeLayout
+            android:id="@+id/reminder_layout"
+            android:layout_height="70dp"
+            android:layout_width="match_parent"
+            android:padding="4dp">
+
+            <TextView
+                android:drawableLeft="@drawable/ic_alarm_24dp"
+                android:drawablePadding="4dp"
+                android:gravity="center_vertical"
+                android:id="@+id/reminder_tv"
+                android:layout_alignParentLeft="true"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="16dp"
+                android:layout_width="wrap_content"
+                android:text="@string/no_reminder_specified_text"
+                android:textColor="@android:color/darker_gray" />
+
+            <Button
+                android:background="@android:color/transparent"
+                android:id="@+id/set_reminder_button"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="8dp"
+                android:layout_width="wrap_content"
+                android:text="@string/set_reminder_button_text"
+                android:textColor="@color/colorPrimary" />
+
+            <Button
+                android:background="@android:color/transparent"
+                android:id="@+id/remove_reminder_button"
+                android:layout_alignParentBottom="true"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="16dp"
+                android:layout_toLeftOf="@id/set_reminder_button"
+                android:layout_width="wrap_content"
+                android:text="@string/remove_reminder_button_text"
+                android:textColor="@color/colorPrimary"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+    </net.cachapa.expandablelayout.ExpandableLayout>
+
+
+    <Button
+        android:background="@drawable/button_style"
+        android:foreground="?attr/selectableItemBackground"
+        android:id="@+id/submit_todo_button"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_width="wrap_content"
+        android:text="@string/add_to_do_button_text"
+        android:textColor="#fff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/expandable_reminder_layout" />
+</android.support.constraint.ConstraintLayout>

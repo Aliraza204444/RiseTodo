@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_weight="1"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="6dp"
+        android:layout_marginStart="6dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingTop="4dp">
+
+        <TextView
+            android:id="@+id/to_do_due_month_tv"
+            android:layout_width="28dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="4dp"
+            android:maxLines="1"
+            android:textStyle="bold"
+            android:textColor="@color/colorTodoAccent"
+            android:textSize="12sp"
+            android:fontFamily="monospace"
+            android:textAllCaps="true"
+            android:includeFontPadding="false"
+            tools:text="sep" />
+
+        <TextView
+            android:id="@+id/to_do_due_day_tv"
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorTodoAccent"
+            android:textSize="16sp"
+            android:fontFamily="sans-serif"
+            android:includeFontPadding="false"
+            android:textStyle="bold"
+            tools:text="28" />
+
+    </LinearLayout>
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="2dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="6dp"
+        android:layout_weight="0.9">
+
+        <FrameLayout
+            android:layout_width="4dp"
+            android:layout_height="match_parent"
+            android:background="@color/colorCard" />
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?android:attr/selectableItemBackground"
+            android:minHeight="60dp"
+            android:paddingBottom="14dp"
+            android:paddingLeft="8dp"
+            android:paddingRight="8dp"
+            android:paddingTop="8dp">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingBottom="5dp"
+                android:paddingEnd="8dp"
+                android:paddingRight="8dp"
+                android:paddingTop="5dp"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintLeft_toRightOf="@id/todo_done_checkbox"
+                app:layout_constraintRight_toLeftOf="@id/voice_note_button">
+
+                <TextView
+                    android:id="@+id/to_do_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/roboto"
+                    android:paddingLeft="1dp"
+                    android:textSize="14sp"
+                    tools:text="Shopping" />
+
+                <TextView
+                    android:id="@+id/to_do_notes_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/roboto"
+                    android:paddingLeft="1dp"
+                    android:textColor="@android:color/darker_gray"
+                    android:textSize="14sp"
+                    tools:text="Egg, milk, etc." />
+
+                <TextView
+                    android:id="@+id/to_do_reminder_tv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:drawableLeft="@drawable/ic_alarm_blue_24dp"
+                    android:drawablePadding="4dp"
+                    android:drawableStart="@drawable/ic_alarm_blue_24dp"
+                    android:textColor="@color/colorPrimary"
+                    android:textSize="12sp"
+                    tools:text="14 sun 2017" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/voice_note_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_marginBottom="2dp"
+                android:layout_marginRight="4dp"
+                android:layout_marginTop="2dp"
+                android:background="@drawable/circle_stroke_gray"
+                android:drawableLeft="@drawable/ic_volume_mute_24dp"
+                android:paddingLeft="5dp"
+                android:scaleType="centerInside"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/to_do_options_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <CheckBox
+                android:id="@+id/todo_done_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:autoSizeStepGranularity="@dimen/cardview_default_radius"
+                android:scaleX="0.80"
+                android:scaleY="0.80"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </android.support.constraint.ConstraintLayout>
+
+
+    </android.support.v7.widget.CardView>
+</LinearLayout>

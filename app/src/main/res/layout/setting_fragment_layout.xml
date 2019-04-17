@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@android:color/white"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_volume_up_black_24dp"
+            android:layout_alignParentLeft="true"
+            android:paddingTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:paddingBottom="6dp"
+            android:id="@+id/sound_iv"/>
+
+        <TextView
+            android:id="@+id/sound_tv"
+            android:paddingTop="8dp"
+            android:paddingBottom="6dp"
+            android:layout_marginLeft="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@id/sound_iv"
+            android:text="@string/sound_title"
+            android:textSize="16sp"/>
+
+        <Switch
+            android:id="@+id/sound_switch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_alignBaseline="@id/sound_tv"
+            android:layout_marginRight="8dp"/>
+    </RelativeLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#FFE0E0E0"
+        android:layout_margin="2dp"/>
+
+</LinearLayout>

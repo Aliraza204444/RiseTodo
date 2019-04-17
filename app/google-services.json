@@ -1,0 +1,41 @@
+{
+  "project_info": {
+    "project_number": "992045750994",
+    "firebase_url": "https://risetodo-17cbf.firebaseio.com",
+    "project_id": "risetodo-17cbf",
+    "storage_bucket": "risetodo-17cbf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:992045750994:android:2cdb41afa35ff65d",
+        "android_client_info": {
+          "package_name": "com.saratms.risetodo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "992045750994-hmd6941ubg404tt7uqr40pt87p2h0cbe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDc2L0o6utlNR1HCVharkhvrcO3QwVhH_4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "992045750994-hmd6941ubg404tt7uqr40pt87p2h0cbe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      },
+      "admob_app_id": "ca-app-pub-3349762881658074~2864090778"
+    }
+  ],
+  "configuration_version": "1"
+}
